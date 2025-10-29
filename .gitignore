@@ -1,0 +1,30 @@
+# ===== FRONTEND =====
+frontend/.env
+frontend/node_modules/
+
+# ===== BACKEND =====
+backend/.env
+backend/node_modules/
+
+# ===== ROOT =====  
+.env
+node_modules/
+
+# ===== COMMON IGNORE PATTERNS =====
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS and Editor Files
+.DS_Store
+Thumbs.db
+
+# Build/Dist Files
+dist/
+build/
+
+# IDE Configurations
+.vscode/
+.idea/
