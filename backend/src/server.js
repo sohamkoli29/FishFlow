@@ -10,6 +10,7 @@ import authRoutes from './routes/auth.js'
 import uploadRoutes from './routes/upload.js'
 import supplierRoutes from './routes/suppliers.js'
 import supplierBillRoutes from './routes/supplierBills.js'
+import analyticsRoutes from './routes/analytics.js'
 
 dotenv.config()
 
@@ -37,6 +38,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/upload', uploadRoutes)
 app.use('/api/suppliers', supplierRoutes)
 app.use('/api/supplier-bills', supplierBillRoutes)
+app.use('/api/analytics', analyticsRoutes)
 
 // 404 handler
 app.use('*', (req, res) => {

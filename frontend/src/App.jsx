@@ -11,6 +11,7 @@ import UnpaidOrders from './pages/UnpaidOrders/UnpaidOrders'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import AllOrders from './pages/AllOrders/AllOrders'
 import SupplierBills from './pages/SupplierBills/SupplierBills'
+import AnalyticsDashboard from './pages/AnalyticsDashboard/AnalyticsDashboard'
 import { api } from './utils/api'
 import './styles/App.css'
 
@@ -88,9 +89,16 @@ function App() {
                      </ProtectedRoute>
                    } 
                  />
+
+                 <Route 
+                 path="/analytics" 
+                 element={
+                      <ProtectedRoute>
+                        <AnalyticsDashboard />
+                      </ProtectedRoute>
+                    } />
             </Routes>
 
-            // Add this route to App.jsx
 
           </main>
           <Footer />

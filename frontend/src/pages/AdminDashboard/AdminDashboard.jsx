@@ -185,6 +185,12 @@ const AdminDashboard = () => {
                 View Menu
               </button>
               <button 
+                  className="btn btn-primary"
+                  onClick={() => window.location.href = '/analytics'}
+                >
+                  📊 Analytics
+                </button>
+              <button 
                 className="btn btn-secondary"
                 onClick={logout}
               >

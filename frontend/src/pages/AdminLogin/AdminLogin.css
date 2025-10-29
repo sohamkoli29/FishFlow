@@ -76,3 +76,33 @@
     font-size: 1.75rem;
   }
 }
+
+/* Add to existing AdminLogin.css */
+.button-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.setup-notice {
+  background: #fef3c7;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-top: 1rem;
+}
+
+.setup-notice p {
+  margin: 0;
+  color: #92400e;
+  font-size: 0.875rem;
+}

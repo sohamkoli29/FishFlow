@@ -10,6 +10,7 @@ const AdminLogin = () => {
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [isFirstTimeSetup, setIsFirstTimeSetup] = useState(false)
 
   const { login, isAuthenticated } = useAuth()
   const navigate = useNavigate()
@@ -38,12 +39,19 @@ const AdminLogin = () => {
     setLoading(true)
     setError('')
 
+    // Basic validation
+    if (!formData.email || !formData.password) {
+      setError('Please enter both email and password')
+      setLoading(false)
+      return
+    }
+
     const result = await login(formData.email, formData.password)
     
     if (result.success) {
       navigate('/admin', { replace: true })
     } else {
-      setError(result.error || 'Login failed')
+      setError(result.error || 'Login failed. Please check your credentials.')
     }
     
     setLoading(false)
@@ -61,7 +69,7 @@ const AdminLogin = () => {
           <form onSubmit={handleSubmit} className="login-form">
             {error && (
               <div className="error-message">
-                {error}
+                <strong>Error:</strong> {error}
               </div>
             )}
 
@@ -76,9 +84,10 @@ const AdminLogin = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 className="form-input"
-                placeholder="admin@fishflow.com"
+                placeholder="your-email@example.com"
                 required
                 disabled={loading}
+                autoComplete="email"
               />
             </div>
 
@@ -96,6 +105,7 @@ const AdminLogin = () => {
                 placeholder="Enter your password"
                 required
                 disabled={loading}
+                autoComplete="current-password"
               />
             </div>
 
@@ -104,16 +114,29 @@ const AdminLogin = () => {
               className="btn btn-primary login-btn"
               disabled={loading}
             >
-              {loading ? 'Signing In...' : 'Sign In'}
+              {loading ? (
+                <>
+                  <div className="button-spinner"></div>
+                  Signing In...
+                </>
+              ) : (
+                'Sign In'
+              )}
             </button>
           </form>
 
           <div className="login-footer">
-            <p>Default credentials:</p>
             <p>
-              <strong>Email:</strong> admin@fishflow.com<br />
-              <strong>Password:</strong> admin123
+              <strong>Note:</strong> This is the admin panel. 
+              Customer ordering does not require login.
             </p>
+            {isFirstTimeSetup && (
+              <div className="setup-notice">
+                <p>
+                  <strong>First time setup?</strong> Contact support to create your admin account.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
