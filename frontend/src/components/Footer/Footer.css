@@ -1,0 +1,38 @@
+.footer {
+  background: #1e293b;
+  color: white;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-content p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .footer {
+    padding: 2.5rem 0;
+  }
+  
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .footer-content p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,22 @@
+.loading-container,
+.unauthorized-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.unauthorized-content h2 {
+  color: #dc2626;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.unauthorized-content p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}

@@ -1,0 +1,540 @@
+.unpaid-orders-page {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.unpaid-header {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.unpaid-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.unpaid-header h1 {
+  color: #1e293b;
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.unpaid-header p {
+  color: #64748b;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #0ea5e9;
+}
+
+.summary-card.total-amount {
+  border-left-color: #10b981;
+}
+
+.summary-icon {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f9ff;
+  border-radius: 50%;
+}
+
+.summary-card.total-amount .summary-icon {
+  background: #f0fdf4;
+}
+
+.summary-content h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
+}
+
+.summary-content p {
+  color: #64748b;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Unpaid Orders Section */
+.unpaid-orders-section {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.unpaid-orders-section h2 {
+  color: #1e293b;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #64748b;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  color: #10b981;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  margin: 0.25rem 0;
+  font-size: 1.1rem;
+}
+
+/* Unpaid Order Cards */
+.unpaid-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.unpaid-order-card {
+  border: 2px solid #fef2f2;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: #fef2f2;
+  transition: all 0.3s ease;
+}
+
+.unpaid-order-card:hover {
+  border-color: #fecaca;
+  box-shadow: 0 4px 12px rgba(254, 202, 202, 0.3);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.customer-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.table-badge {
+  background: #0ea5e9;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.order-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.order-id {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-family: monospace;
+}
+
+.order-time {
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.customer-phone {
+  color: #475569;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.order-amount {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.amount-due {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #dc2626;
+  margin-bottom: 0.25rem;
+}
+
+.amount-label {
+  color: #64748b;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Order Items */
+.order-items {
+  margin-bottom: 1rem;
+}
+
+.order-items h4 {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #fecaca;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  flex: 1;
+  color: #374151;
+}
+
+.item-quantity {
+  color: #64748b;
+  font-size: 0.875rem;
+  margin: 0 1rem;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #374151;
+  min-width: 80px;
+  text-align: right;
+}
+
+.order-notes {
+  background: white;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* Order Actions */
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mark-paid-btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  min-width: 140px;
+}
+
+.btn-success {
+  background: #10b981;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #059669;
+}
+
+/* Payment Modal */
+.payment-modal {
+  max-width: 500px;
+}
+
+.payment-summary {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #10b981;
+}
+
+.payment-summary div {
+  margin-bottom: 0.5rem;
+}
+
+.payment-summary div:last-child {
+  margin-bottom: 0;
+}
+
+.payment-summary strong {
+  color: #374151;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .unpaid-header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .order-amount {
+    text-align: left;
+  }
+  
+  .order-meta {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .items-list {
+    font-size: 0.875rem;
+  }
+  
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .item-quantity, .item-price {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .order-actions {
+    justify-content: stretch;
+  }
+  
+  .mark-paid-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .unpaid-orders-section {
+    padding: 1rem;
+  }
+  
+  .unpaid-order-card {
+    padding: 1rem;
+  }
+  
+  .customer-name {
+    font-size: 1.1rem;
+  }
+  
+  .amount-due {
+    font-size: 1.25rem;
+  }
+  
+  .payment-modal {
+    margin: 0.5rem;
+  }
+}
+
+/* Add to existing UnpaidOrders.css */
+
+/* Order Actions - Updated for two buttons */
+.order-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.cancel-btn {
+  background: #ef4444;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background: #dc2626;
+}
+
+.mark-paid-btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  min-width: 140px;
+}
+
+.btn-success {
+  background: #10b981;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #059669;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+/* Cancel Modal Styles */
+.cancel-modal {
+  max-width: 500px;
+}
+
+.cancel-summary {
+  background: #fef2f2;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #ef4444;
+}
+
+.cancel-summary div {
+  margin-bottom: 0.5rem;
+}
+
+.cancel-summary div:last-child {
+  margin-bottom: 0;
+}
+
+.cancel-summary strong {
+  color: #374151;
+}
+
+.cancel-warning {
+  color: #dc2626;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 4px;
+  border: 1px solid #fecaca;
+}
+
+/* Quick Reasons */
+.quick-reasons {
+  margin-bottom: 1rem;
+}
+
+.quick-reasons-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.quick-reasons-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.quick-reason-btn {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #374151;
+}
+
+.quick-reason-btn:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+/* Mobile Responsive Updates */
+@media (max-width: 768px) {
+  .order-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .cancel-btn,
+  .mark-paid-btn {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .quick-reasons-buttons {
+    flex-direction: column;
+  }
+  
+  .quick-reason-btn {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-actions {
+    gap: 0.75rem;
+  }
+}

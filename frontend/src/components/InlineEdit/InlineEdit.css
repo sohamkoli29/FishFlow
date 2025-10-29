@@ -1,0 +1,140 @@
+.inline-edit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.inline-edit-input {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #0ea5e9;
+  border-radius: 6px;
+  font-size: inherit;
+  font-family: inherit;
+  background: white;
+  min-width: 100px;
+  flex: 1;
+}
+
+.inline-edit-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.inline-edit-input.error {
+  border-color: #ef4444;
+}
+
+.inline-edit-input:disabled {
+  background-color: #f8fafc;
+  opacity: 0.7;
+}
+
+.inline-edit-error {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  font-size: 0.75rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+}
+
+.inline-edit-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.inline-edit-btn {
+  padding: 0.375rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  min-width: 28px;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.inline-edit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.save-btn {
+  background: #10b981;
+  color: white;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #059669;
+}
+
+.cancel-btn {
+  background: #64748b;
+  color: white;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background: #475569;
+}
+
+.inline-edit-display {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 40px;
+}
+
+.inline-edit-display:hover {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.edit-indicator {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.inline-edit-display:hover .edit-indicator {
+  opacity: 1;
+}
+
+/* Price specific styles */
+.inline-edit-price .inline-edit-input {
+  text-align: right;
+  font-weight: 600;
+  color: #0ea5e9;
+}
+
+.inline-edit-price .inline-edit-display {
+  font-weight: 600;
+  color: #0ea5e9;
+  justify-content: flex-end;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .inline-edit {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .inline-edit-actions {
+    align-self: flex-end;
+  }
+  
+  .inline-edit-display {
+    min-height: 36px;
+  }
+}
