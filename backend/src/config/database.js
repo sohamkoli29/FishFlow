@@ -45,3 +45,22 @@ supabase
   .catch(error => {
     console.error('❌ Supabase connection error:', error.message)
   })
+
+  export const testStorageConnection = async () => {
+  try {
+    const { data, error } = await supabase.storage
+      .from('product-images')
+      .list('', { limit: 1 })
+    
+    if (error) {
+      console.error('Storage connection test failed:', error)
+      return false
+    }
+    
+    console.log('✅ Storage connection successful')
+    return true
+  } catch (error) {
+    console.error('Storage connection test error:', error)
+    return false
+  }
+}
